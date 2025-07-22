@@ -11,6 +11,12 @@ blank_unit_temp = {
             "power": 0,
             "effects": [
                 {
+                    "if": "",
+                    "modify": "power",
+                    "operation": "multiply",
+                    "value": 2
+                },
+                {
                     "type": "",
                     "target": "",
                     "effect": "",
@@ -28,6 +34,12 @@ blank_unit_temp = {
             "cool_down": 0,
             "effects": [
                 {
+                    "if": "",
+                    "modify": "power",
+                    "operation": "multiply",
+                    "value": 2
+                },
+                {
                     "type": "",
                     "target": "",
                     "effect": "",
@@ -44,6 +56,12 @@ blank_unit_temp = {
             "power": 0,
             "cool_down": 0,
             "effects": [
+                {
+                    "if": "",
+                    "modify": "power",
+                    "operation": "multiply",
+                    "value": 2
+                },
                 {
                     "type": "",
                     "target": "",
