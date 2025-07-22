@@ -103,6 +103,7 @@ def main():
                             "type" : "buff",
                             "target" : "tar_ally",
                             "effect" : "def_up",
+                            "value" : 25,
                             "duration" : 2
                         },
                         {
@@ -223,12 +224,85 @@ def main():
             ]
         },
         {
-            "name" : "Mistress of Mayhem",
+            "name": "Mistress of Mayhem",
             "element": "Fire",
             "rarity": "SR",
             "skills": [
                 {
-
+                    "skill": 1,
+                    "name": "Curtain Call",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 30,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "silence",
+                            "chance": 30,
+                            "value": 0,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Strikes the enemy with a crescendo of sound. Chance to silence."
+                },
+                {
+                    "skill": 2,
+                    "name": "Star of the Show",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "random_enemy",
+                            "effect": "taunt",
+                            "chance": 60,
+                            "value": 0,
+                            "duration": 1
+                        },
+                        {
+                            "type": "debuff",
+                            "target": "random_enemy",
+                            "effect": "atk_down",
+                            "chance": 60,
+                            "value": 0,
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Forces a random enemy to be enthralled with the Mistress. "
+                                   "They’ll perform... or die trying"
+                },
+                {
+                    "skill": 3,
+                    "name": "Encore",
+                    "power": 100,
+                    "cool_down": 0,
+                    "effects": [
+                        {
+                            "if": "target_has_buffs",
+                            "modify": "power",
+                            "operation": "multiply",
+                            "value": 2
+                        },
+                        {
+                            "type": "debuff",
+                            "target": "all_enemies",
+                            "effect": "def_down",
+                            "chance": 80,
+                            "value": 25,
+                            "duration": 1
+                        },
+                        {
+                            "type": "debuff",
+                            "target": "all_enemies",
+                            "effect": "stun",
+                            "chance": 30,
+                            "value": 0,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Unleashes her soul in a final aria, stripping buffs and forcing the spotlight. "
+                                   "Deals bonus damage to empowered enemies"
                 }
             ]
         },
