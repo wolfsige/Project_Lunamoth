@@ -302,10 +302,75 @@ def main():
             ]
         },
         {
-            "name" : "SR 3"
+            "name": "Su'phanx, the Hypnotic Mirage",
+            "element": "Wind",
+            "rarity": "SR",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Feather Rake",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 35,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "accuracy_down",
+                            "chance": 30,
+                            "value": 15,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Rakes at the target with sharp, feathered claws. Chance to reduce accuracy."
+                },
+                {
+                    "skill": 2,
+                    "name": "Hypnotic Gaze",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "random_enemy",
+                            "effect": "sleep",
+                            "chance": 50,
+                            "value": 0,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Fixes a mesmerizing gaze on a random enemy, lulling them into vulnerability."
+                },
+                {
+                    "skill": 3,
+                    "name": "Plume Shroud",
+                    "power": 0,
+                    "cool_down": 4,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "all_allies",
+                            "effect": "evasion_up",
+                            "chance": 0,
+                            "value": 15,
+                            "duration": 2
+                        },
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "spd_up",
+                            "chance": 0,
+                            "value": 20,
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Shakes its iridescent tail in a dazzling display, shielding allies and quickening its own pace."
+                }
+            ]
         },
         {
             "name" : "SR 4"
+            #Oooo, I also like the idea of an orchid mantis girl. I’d say fairy, I guess it could be a fairy too and it would likely be the size of a fairy or an actual orchid mantis. Her skin would be completely armored like the mantis, white color base with pink accents like the mantis. Her arms would be the pincers with an extra set of legs at her hips, and her legs would be humanoid with the armoring and ending at a point like the mantis legs. She’d have a mantis abdomen coming off of her back end, antenna out of her head. She’d also have white hair, short, with pink and purplish tips. Oh and she’d have light pink eyes.
         },
         {
             "name" : "SR 5"
