@@ -442,7 +442,8 @@ def main():
             ]
         },
         {
-            "name" : "SR 5"
+            "name" : "SR 5",
+            "element": "Fire"
         },
         {
             "name" : "R 1"
