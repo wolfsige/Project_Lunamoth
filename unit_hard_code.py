@@ -369,8 +369,77 @@ def main():
             ]
         },
         {
-            "name" : "SR 4"
-            #Oooo, I also like the idea of an orchid mantis girl. I’d say fairy, I guess it could be a fairy too and it would likely be the size of a fairy or an actual orchid mantis. Her skin would be completely armored like the mantis, white color base with pink accents like the mantis. Her arms would be the pincers with an extra set of legs at her hips, and her legs would be humanoid with the armoring and ending at a point like the mantis legs. She’d have a mantis abdomen coming off of her back end, antenna out of her head. She’d also have white hair, short, with pink and purplish tips. Oh and she’d have light pink eyes.
+            "name": "Lilic, the Orchid Death",
+            "element": "Wind",
+            "rarity": "SR",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Petal Scythe",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 45,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "bleed",
+                            "chance": 25,
+                            "value": 0,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Strikes with bladed petals. Chance to inflict bleeding."
+                },
+                {
+                    "skill": 2,
+                    "name": "Fea Camouflage",
+                    "power": 0,
+                    "cool_down": 4,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "evasion_up",
+                            "chance": 0,
+                            "value": 0,
+                            "duration": 2
+                        },
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "spd_up",
+                            "chance": 0,
+                            "value": 25,
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Shifts into flower-like stillness, indistinguishable from the surroundings. Gain evasion and speed."
+                },
+                {
+                    "skill": 3,
+                    "name": "Execution Bloom",
+                    "power": 150,
+                    "cool_down": 5,
+                    "effects": [
+                        {
+                            "if": "target_has_bleed",
+                            "modify": "power",
+                            "operation": "multiply",
+                            "value": 2
+                        },
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "immunity",
+                            "chance": 0,
+                            "value": 0,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Strikes with surgical precision. Deals double damage to bleeding foes. After, apply immunity."
+                }
+            ]
         },
         {
             "name" : "SR 5"
