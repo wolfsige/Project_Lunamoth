@@ -1,60 +1,50 @@
+import json
 from random import randint
+import random
 
 
 def main():
-    num = input("How many summons do you have? ")
-    summons = summon_logic(int(num))
+    continue_on = ""
+    while continue_on.upper() != "N":
+        continue_on = input("Hit 'Enter' to summon"
+                            
+                            "Enter 'N' stop ")
+        if continue_on.upper() != "N":
+            summon_logic()
+            print(
 
-    print(summons)
+            )
 
+def summon_logic():
+    with open("unit_database.json", "r") as summons:
+        data = json.load(summons)
 
-def summon_logic(x):
-    out_come = []
-    for y in range(1, x+1):
-        rolled = randint(1, 10)
-        summon = summon_list(rolled)
-        out_come.append(summon)
-    return out_come
+    ssr_units = []
+    for unit in data:
+        if unit["rarity"] == "SSR":
+            ssr_units.append(unit)
 
+    sr_units = []
+    for unit in data:
+        if unit["rarity"] == "SR":
+            sr_units.append(unit)
 
-def summon_list(num):
-    dict = {"SSR": ["SSR 1", "SSR 2"],
-            "SR": ["SR 1", "SR 2", "SR 3", "SR 4"],
-            "R": ["R1", "R2", "R3", "R4", "R5", "R6"]}
-    if num == 1:
-        what_one = randint(1, 2)
-        match what_one:
-            case 1:
-                return dict["SSR"][0]
-            case _:
-                return dict["SSR"][1]
-    elif 2 <= num <= 4:
-        what_one = randint(1, 4)
-        match what_one:
-            case 1:
-                return dict["SR"][0]
-            case 2:
-                return dict["SR"][1]
-            case 3:
-                return dict["SR"][2]
-            case _:
-                return dict["SR"][3]
-    else:
-        what_one = randint(1, 6)
-        match what_one:
-            case 1:
-                return dict["R"][0]
-            case 2:
-                return dict["R"][1]
-            case 3:
-                return dict["R"][2]
-            case 4:
-                return dict["R"][3]
-            case 5:
-                return dict["R"][4]
-            case _:
-                return dict["R"][5]
+    r_units = []
+    for unit in data:
+        if unit["rarity"] == "R":
+            r_units.append(unit)
 
+    for _ in range(10):
+        roll = randint(1, 100)
 
+        if roll <= 5:
+            chosen_unit = random.choice(ssr_units)
+        elif 5 < roll <= 30:
+            chosen_unit = random.choice(sr_units)
+        else:
+            chosen_unit = random.choice(r_units)
+
+        print(f"You summoned {chosen_unit['name']}, "
+              f"they are {chosen_unit["rarity"]} rarity!")
 
 main()
