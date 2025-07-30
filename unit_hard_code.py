@@ -1,3 +1,4 @@
+import json
 def main():
 
     unit_list = [
@@ -442,28 +443,259 @@ def main():
             ]
         },
         {
-            "name" : "SR 5",
-            "element": "Fire"
+            "name": "Scoria, Emberbound Outcast",
+            "element": "Fire",
+            "rarity": "SR",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Crackling Fist",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 35,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "burn",
+                            "chance": 25,
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Strikes with a superheated fist, searing flesh and setting foes ablaze."
+                },
+                {
+                    "skill": 2,
+                    "name": "Volcanic Scream",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "atk_up",
+                            "value": 25,
+                            "duration": 2
+                        },
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "taunt",
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Lets out a rage-filled roar, daring enemies to try and match her fury."
+                },
+                {
+                    "skill": 3,
+                    "name": "Ashes to Ashes",
+                    "power": 80,
+                    "cool_down": 5,
+                    "effects": [
+                        {
+                            "if": "target_has_burn",
+                            "modify": "power",
+                            "operation": "multiply",
+                            "value": 2
+                        },
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "stun",
+                            "chance": 50,
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Channels cursed heat into a punishing strike that overwhelms already burning foes."
+                }
+            ]
         },
         {
-            "name" : "R 1"
+            "name": "Droplet",
+            "element": "Water",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Splash",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 20,
+                    "description": "A light burst of water. Simple and harmless-looking."
+                },
+                {
+                    "skill": 2,
+                    "name": "Drizzle Veil",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "evasion_up",
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Wraps itself in mist, increasing evasion briefly."
+                }
+            ]
         },
         {
-            "name" : "R 2"
+            "name": "Brooktail",
+            "element": "Water",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Ripple Kick",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 25,
+                    "description": "A low kick that sends water waves toward the enemy."
+                },
+                {
+                    "skill": 2,
+                    "name": "Soak",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "debuff",
+                            "target": "enemy",
+                            "effect": "spd_down",
+                            "chance": 40,
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Drenches the target, possibly slowing them."
+                }
+            ]
         },
         {
-            "name" : "R 3"
+            "name": "Glimkit",
+            "element": "Light",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Blink Swipe",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 25,
+                    "description": "A quick flash and scratch. Difficult to track."
+                },
+                {
+                    "skill": 2,
+                    "name": "Radiant Pulse",
+                    "power": 0,
+                    "cool_down": 4,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "atk_up",
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Charges up light energy, increasing attack temporarily."
+                }
+            ]
         },
         {
-            "name" : "R 4"
+            "name": "Beacon Bug",
+            "element": "Light",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Light Jab",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 20,
+                    "description": "A jab that leaves a glowing afterimage."
+                },
+                {
+                    "skill": 2,
+                    "name": "Bug Signal",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "all_allies",
+                            "effect": "regen",
+                            "duration": 1
+                        }
+                    ],
+                    "description": "Emits a pulse of radiant energy, lightly restoring nearby allies."
+                }
+            ]
         },
         {
-            "name" : "R 5"
+            "name": "Cinderpaw",
+            "element": "Fire",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Ash Swipe",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 30,
+                    "description": "A claw swipe trailing small embers."
+                },
+                {
+                    "skill": 2,
+                    "name": "Kindle",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "self",
+                            "effect": "crit_up",
+                            "duration": 2
+                        }
+                    ],
+                    "description": "Focuses heat internally, increasing critical chance."
+                }
+            ]
         },
         {
-            "name" : "R 6"
+            "name": "Thistletuft",
+            "element": "Wind",
+            "rarity": "R",
+            "skills": [
+                {
+                    "skill": 1,
+                    "name": "Whisker Gale",
+                    "type": "attack",
+                    "target": "enemy",
+                    "power": 25,
+                    "description": "A flurry of wind-slashed strikes from quick limbs."
+                },
+                {
+                    "skill": 2,
+                    "name": "Tailwind",
+                    "power": 0,
+                    "cool_down": 3,
+                    "effects": [
+                        {
+                            "type": "buff",
+                            "target": "all_allies",
+                            "effect": "spd_up",
+                            "duration": 1
+                        }
+                    ],
+                    "description": "A swift gust propels the team forward."
+                }
+            ]
         },
     ]
+
+    with open("unit_database.json", "w") as f:
+        json.dump(unit_list, f, indent=4)
+
 
 
 main()
